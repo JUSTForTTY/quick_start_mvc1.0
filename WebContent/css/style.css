@@ -1,0 +1,99 @@
+body{padding: 0;margin: 0; color: #666666;font-size: 12px;}
+ul,li{list-style: none;margin: 0;padding: 0}
+._cl{clear: both;}
+.img{outline: none;border: none;}
+
+/* 头部 */
+
+.headers_box{ width: 100%; height: 60px;background-color: #F5F5F4}
+.headers_box .headers{width:1000px;margin: 0 auto;}
+
+.headers_box .headers .e_logo{float: left}
+.headers_box .headers .e_logo img{outline: none;}
+.headers_box .headers .soso{float: left;margin:15px 0 0 200px;}
+.headers_box .headers .soso .text{border: 1px solid #D6D6D6;border-right: none;width: 270px;line-height: 30px;height: 30px;float: left;}
+.headers_box .headers .soso .text input{border: none;background: none;outline: none;line-height: 30px; display:block; height:30px;padding: 0 3px}
+.headers_box .headers .soso .c_btn{border: 1px solid #D6D6D6;width: 52px;line-height: 30px;height: 30px;float: left; text-align:center;cursor: pointer;}
+.headers_box .headers .infos{float: right;line-height: 40px;margin-top:11px;}
+.headers_box .headers .infos .faces{float: left;display: block;width: 40px; height: 40px;overflow: hidden;background-color: #F5F5F4; border-radius: 20px}
+.headers_box .headers .infos .faces img{width: 40px; height: 40px;cursor: pointer;}
+.headers_box .headers .infos label{float: left;display: block;line-height: 40px;height: 40px; cursor: pointer;margin-left: 10px;}
+.headers_box .headers .infos span{float: left;display: block;line-height: 40px;height: 40px; cursor: pointer;margin-left: 10px;}
+.headers_box .headers .infos .i_msg{margin-left: 10px;float: left;display: block;line-height: 40px;height: 40px; cursor: pointer;background:url("../images/i_msg.png") left 9px no-repeat;width: 35px;position: relative;}
+.headers_box .headers .infos .i_msg .nub{position: absolute;top:1px;right:-2px; border-radius: 7px;height: 14px;width: 14px;line-height: 14px;text-align: center;background-color: red;color: #fff}
+.center {
+	width: 1000px;
+	margin: 10px auto;
+	min-height: 500px;
+	 border: 1px solid #CCC 
+}
+
+.left {
+	float: left;
+	width: 160px;
+	min-height: 600px;
+}
+
+.right {
+overflow-x:hidden; float: left;width: 830px; 
+}
+
+.right .infoList{margin: 20px}
+.right .infoList li{line-height: 24px;margin-bottom: 20px}
+.right .infoList li label{display:block;;line-height: 24px; width: 65px;float: left;font-size: 12px;color: #808080;}
+.right .infoList li .list  span{display:block;line-height: 24px;margin-right: 20px;float: left;padding: 0 10px;cursor: pointer;}
+.right .infoList li .list  .hover,.right .infoList li .list  span:hover{background-color:  #59C32B;color: #fff}
+#select_s{margin-left: 20px;}
+/* 表单添加 */
+.right .AddTitle{margin: 10px 0}
+.right .AddTitle label{display: block; float: left;line-height: 30px;font-size: 16px; font-weight: bold;}
+.right .AddTitle .opt{float: left;width: 200px}
+.right .AddTitle .opt a{display: block;float: left;;margin-left: 10px}
+.right .AddTitle2{line-height: 30px;color: #FD8000} 
+.right .AddList{margin: 10px 0}
+.right .AddList li{display: block;line-height: 30px;float: left;margin-right: 10px;margin-right: 20px;}
+.right .AddList li label{ color: #808080;float: left;width: 68px;line-height: 28px;height: 28px;font-size: 12px;margin-bottom: 24px}
+.right .AddList li label span{color: red;padding-right: 3px}
+.right .AddList li input{padding:0 3px;display: block;float: left;height: 26px;line-height: 26px;border: 1px solid #E8E8E8;width: 160px;margin-bottom: 24px}
+.right .Addremarks{}
+.right .Addremarks label{color: #808080;float: left;width: 68px;line-height: 28px;height: 28px;font-size: 12px;margin-bottom: 24px}
+.right .Addremarks textarea {width: 745px; height: 100px;float: left;;display: block;}
+
+.right .preview_img{margin:10px 0 10px  58px;}
+.right .preview_img a{width: 178px; height: 130px;margin-left: 10px;display: block;float: left;border: 1px solid #E1E1E1}
+.right .preview_img a img{width: 176px;height: 128px;margin: 1px}
+/* 详细信息 */
+.right .detailed{border: 0px solid #E8E8E8;padding: 10px 0;margin-left: 20px;}
+.right .detailed li{border:1px solid #E8E8E8;margin-bottom: -1px;display: block;padding: 10px 10px ;position: relative;height: 150px}
+.right .detailed li img{float: left;width: 180px; height: 130px;margin: 10px 0}
+.right .detailed li .msgInfo{float: left;display: block;width: 400px;margin-left: 30px;padding:10px 0}
+.right .detailed li .msgInfo h1{font-size: 16px; color: #0066CC}
+.right .detailed li .msgInfo .numbers{color:  #666;font-size: 12px;}
+.right .detailed li .msgInfo .numbers span{color:  #FD8000;font-size: 16px;padding-right: 5px;}
+.right .detailed li .msgInfo ul{padding: 18px 0}
+.right .detailed li .msgInfo ul li{float: left;display: block;margin-right: 15px;border: none;height: 30px; line-height: 30px;padding: 0;}
+.right .detailed li .read{position: absolute;right: 34px;top: 65px;}
+ 
+
+
+.list{list-style: none;padding: 0;margin: 10px}
+.list li{background-color: #F5F5F4;display: block;width: 136px;line-height: 40px;text-align: center;margin-bottom:10px;color: #666666;font-size: 14px;cursor: pointer;border: 1px solid #E8E8E8;list-style: none;padding: 0;margin: 0 0 10px 0 ;}
+.list .hover,.list li:hover{background-color: #59C32B;color: #fff;}
+
+.center{ width: 1000px; margin:0 auto;}
+
+
+
+
+
+/* 通用样式 */
+._select_input{height: 28px;line-height: 28px;border: 1px solid #E8E8E8;width: 170px}
+
+._btn_orange{background-color: #FD8000;text-align: center;line-height:30px; height: 30px;display: block; padding: 0 15px;color: #fff;outline: none;border: none;cursor:pointer }
+._btn_orange:hover{ background-color: #E47300;color: #fff}
+
+._btn_green{background-color: #4DAC23;text-align: center;line-height:30px; height: 30px;display: block; padding: 0 15px;color: #fff;outline: none;border: none;cursor:pointer; }
+._btn_green:hover{ background-color: #0CA10C;color: #fff}
+
+._btn_gray{background-color: #CAC9C9;text-align: center;line-height:30px; height: 30px;display: block; padding: 0 15px;color: #fff;outline: none;border: none;cursor:pointer; }
+._btn_gray:hover{ background-color: #BAB9B9;color:#fff}

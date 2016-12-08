@@ -1,0 +1,495 @@
+@charset "utf-8";
+
+/*-------全局样式--------*/
+
+
+body {
+	margin: 0;
+	font: 12px Arial,'宋体';
+	color: #313131;
+	line-height: 25px;
+	background: #ffffff;
+	min-width: 995px;
+}
+
+h3 {
+	/* line-height: 50%; */
+	font-size: 14px;
+	margin-top: 0px;
+	margin-bottom: 9px;
+}
+
+h4 {
+	/* line-height: 50%; */
+	padding:0px;
+	margin-top:7px;
+	margin-bottom:0px;
+	height: 25px;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: #313131;
+}
+
+ul, li, ol, img {
+	margin: 0;
+	padding: 0;
+}
+
+hr{
+	border-top:1px solid #b8b8b8;
+	height:0;  /*兼容IE6*/
+	border-right:0px;
+	border-bottom:0px;
+	border-left:0px;
+	margin:10px;
+}
+
+.outer {
+	margin: 0;
+}
+
+.line {
+	margin-top: 10px;
+	border-top: 1px dashed #cdcdcd;
+}
+
+.clear{
+	clear:both;
+}
+
+/*-------首页布局--------*/
+
+.top-blue {
+	background-color: #8AB923;
+	height: 30px;
+	overflow: hidden;
+}
+
+.top-blue-ct {
+	width: 980px;
+	margin: auto;
+	color: white;
+	font: 12px '宋体';
+	line-height: 30px;
+}
+
+#SYandSC {
+	float: left;
+	width: 180px;
+	margin-left: 15px;
+}
+
+#LGandRG {
+	float: right;
+	width: 300px;
+	clear: right;
+	text-align:right;
+}
+
+.top-logo {
+	height: 67px;
+	background: #F6FFE7;
+}
+
+.top-logo-ct {
+	width: 980px;
+	margin: auto;
+}
+
+#logo {
+	
+	float: left;
+	width: 85px;
+	height: 65px;
+	background: url(images/logo.png) no-repeat;
+	background-position:center center;
+	background-size: 60px;
+	cursor:pointer;
+}
+#logoTitle {
+	float: left;
+	width: 304px;
+	height: 65px;
+	font-size:25px;
+	font-family: 'Microsoft YaHei';
+	margin-top: 0px;
+	background-position:center center;
+	color: #8AB923;
+	line-height:65px;
+}
+#search {
+	float: right;
+	width: auto;
+	margin-top: 22px;
+	margin-right: 0;
+}
+
+.top-menu {
+	height: 43px;
+	margin-bottom: 2px;
+	background-color: #11577d;
+}
+
+.top-menu-ct {
+	width: 980px;
+	height: 43px;
+	margin: auto;
+	color: white;
+	font: bold 16px '微软雅黑';
+	line-height: 43px;
+	position:relative;
+}
+
+.top-image {
+	height: 291px;
+	/* background-color: #1e8dc9; */
+}
+
+.loopImage {
+	width: 980px;
+	margin: auto;
+}
+
+/* .center {
+	margin: 0;
+	overflow: hidden;
+} */
+
+.main {
+	margin: 20px auto;
+	width: 980px;
+	background-color: #FFF;
+	overflow: hidden;
+}
+
+#mainLeft, #newsDeLeft {
+	width: 665px;
+	float: left;
+}
+
+#mainRight,#newsDeRight {
+	width: 300px;
+	float: right;
+}
+
+#mainRight{
+	border: solid #bdd0e1 1px;
+	font-size: 12px;
+}
+
+#gzwm01 {
+	background: url(images/rightBg01.jpg) repeat-x;
+	height: 40px;
+	color: #296194;
+	font: 18px '微软雅黑';
+	line-height: 40px;
+}
+
+#QR {
+	margin: 10px;
+	width: 133px;
+	float: left;
+}
+
+#QRtxt {
+	float: right;
+	margin: 20px 10px;
+}
+
+#rdxw01 {
+	clear: both;
+	background: url(images/rightBg02.jpg) repeat-x;
+	height: 41px;
+	color: #296194;
+	font: 18px '微软雅黑';
+	line-height: 41px;
+}
+
+#rdxw02 {
+	margin: 10px;
+}
+
+.footer_out {
+	height: 110px;
+	width: 100%;border-top:1px solid #E8E8E8;
+}
+.footer{width: 1000px; margin: 20px auto;line-height: 40px;text-align: center;}
+.footer span{padding: 0 20px;}
+.footer span a,.footer span a:hover{color: #666;text-decoration:none;font-size: 12px;}
+
+
+
+
+
+
+
+
+/*-------首页左边新闻单元--------*/
+
+.newsCell {
+	margin: 10px 0;
+	overflow: hidden;
+}
+
+.newsImage {
+	width: 176px;
+	height: 99px;
+	float: left;
+}
+
+.newsRight {
+	position:relative;
+	height: 110px;
+	float: right;
+	width: 460px;
+	font-size: 12px;
+}
+
+/*-------首页文本链接样式--------*/
+
+/* 设为首页&收藏本站 */
+
+#SYandSC a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#SYandSC a:hover {
+	color: #000;
+}
+
+#LGandRG a, .top-menu-ct a {
+	display: block;
+	float: left;
+	text-align: center;
+	color: white;
+}
+
+/* 登录注册 */
+
+#LGandRG a {
+	width: 60px;
+}
+
+#LGandRG a:hover {
+	background: #75c6da;
+}
+
+#LGandRG a:active {
+	color: #074668;
+}
+
+/* 大菜单 */
+
+.top-menu-ct a {
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.top-menu-ct a:hover {
+	background: #4c85a4;
+}
+
+.top-menu-ct a:active {
+	color: #074668;
+}
+
+/*-------首页轮播图样式--------*/
+.example ol {
+	position: absolute;
+	width: 80px;
+	height: 20px;
+	bottom: 8px;
+	right: 101px;
+}
+
+.example ol li {
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin: 5px;
+	background: #fff;
+	list-style: none;
+}
+
+.example ol li.seleted {
+	background: #1AA4CA;
+}
+
+.luara-left {
+	position: relative;
+	padding: 0;
+	overflow: hidden;
+}
+
+.luara-left ul {
+	position: relative;
+	padding: inherit;
+	margin: 0;
+}
+
+.luara-left ul li {
+	float: left;
+	padding: inherit;
+	margin: inherit;
+	list-style: none;
+}
+
+.luara-left ul li img {
+	width: inherit;
+	height: inherit;
+}
+
+/*-------新闻详细页面--------*/
+
+#newsDeLeft {
+	
+}
+
+#newsDeRight{
+
+}
+
+#pl {
+border: #cecece solid 1px;
+margin: 10px 0;
+}
+.plTop1 {
+height: 5px;
+background: #808080;
+}
+.plTop2 {
+background: #f7f3f7;
+height: 46px;
+color: black;
+font: bold 16px Simsun;
+padding-left: 15px;
+line-height: 46px;
+}
+.plTime {
+float: right;
+color: #9c9c9c;
+}
+.plMore {
+text-align: center;
+border-top: #cecece solid 1px;
+height: 40px;
+line-height: 40px;
+}
+.plCell {
+overflow: hidden;
+margin: 5px 10px;
+}
+.line {
+margin-top: 10px;
+border-top: 1px dashed #cdcdcd;
+}
+#btn-zan{
+	float:right;
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+#ftTop textarea{  
+    border:0;
+    background-color:transparent;
+    overflow: auto;
+    color: #666464;
+	width:660px; 
+    height: 106px;
+	margin-top:30px; 
+}
+
+#ftBottom{
+	margin-top:10px;
+	overflow:hidden;
+}
+
+.titBar{
+	overflow:hidden;
+	margin:0;
+	background:url(images/titBar01.jpg) no-repeat;
+}
+
+.titTxt01{
+	float:left;
+	width:120px;
+	height:38px;
+	margin:0 20px;	
+	color:white;
+	font:bold 14px '宋体';
+	line-height:38px;
+}
+
+.more{
+	float:right;
+	width:50px;
+	height:38px;
+	line-height:38px;
+}
+
+.newsLine{
+	margin:5px 15px;
+	color:#06346f;
+}
+
+#newsTitle{
+	width:550px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:40px;
+}
+
+.newsTime{
+	width:587px;
+	height:25px;
+	margin-left:20px;
+	margin-bottom:-9px;
+}
+
+.newsPraise{
+	float:right;
+	width:45px;
+	height:42px;
+	margin-top:-48px;
+	margin-right:10px;
+}
+
+.newsDeImg{
+	margin:auto;
+	width:500px;
+}
+
+.newsDeTxt{
+	margin:10px 20px;
+}
+@media (max-width: 767px) {
+  body{
+   font-size:15px;
+  }
+  #infoTitle{
+  font-size:17px;
+  font-weight:700;
+  }
+  .plTop2{
+  font-size:15px;
+  }
+}
+
+@media (min-width: 768px)and (max-width: 991px) 
+{
+  body{
+   font-size:16px;
+  }
+   #infoTitle{
+  font-size:18px;
+  font-weight:600;
+  }
+   .plTop2{
+  font-size:16px;
+  }
+}

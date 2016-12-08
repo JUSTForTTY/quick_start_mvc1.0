@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xmlns:flex="http://www.springframework.org/schema/flex" xmlns:amq="http://activemq.apache.org/schema/core"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+           http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring     
+  		   http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.2.xsd
+  		   http://www.springframework.org/schema/flex
+		   http://www.springframework.org/schema/flex/spring-flex-1.5.xsd
+		   http://www.directwebremoting.org/schema/spring-dwr    
+           http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd">
+
+	<!-- 此标签在这个例子中不是必须的，如果你想配置Spring容器之外的类，就需要它了。 -->
+	<dwr:configuration ></dwr:configuration>
+
+	<!-- 要求DWR在Spring容器中检查拥有@RemoteProxy 和 @RemoteMethod注解的类。注意它不会去检查Spring容器之外的类 -->
+	<dwr:annotation-config id="annotation-config" />
+
+	<!-- 要求DWR将util.js和engine.js映射到dwrController -->
+	<dwr:url-mapping />
+
+	<!-- 部署项目时, 请把debug设为false 定义dwrController -->
+	<dwr:controller id="dwrController" debug="true" />
+
+	<!-- 扫描需要转换的java对象 -->
+	<dwr:annotation-scan scanRemoteProxy="true" scanDataTransferObject="true"
+		base-package="com.tcj" />
+
+	<!-- order值越小, 优先级越高 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="order" value="1" />
+	</bean>
+	<bean
+		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+		<property name="order" value="2" />
+	</bean>
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="order" value="3" />
+		<property value="true" name="alwaysUseFullPath"></property>
+		<property name="mappings">
+			<props>
+				<prop key="/dwr/**">dwrController</prop>
+			</props>
+		</property>		
+	</bean>
+	
+	<dwr:configuration>	
+<!--                 <dwr:convert converter="bean" match="com.siso.SafeLease.work.vouchersFillManage.service.impl.vouchersBean" /> -->
+<!--                 <dwr:convert converter="bean" match="com.siso.SafeLease.work.vouchersFillManage.service.impl.voucherDetailBean" /> -->
+<!--                 <dwr:convert converter="bean" match="com.siso.SafeLease.work.vouchersFillManage.service.impl.auxiliaryBean" /> -->
+                
+<!--                 <dwr:convert converter="bean" match="com.siso.SafeLease.work.vouchersFillManage.service.impl.vouchersBean"/> -->
+<!-- 		<dwr:convert converter="bean" match="com.siso.SafeLease.work.vouchersFillManage.service.impl.voucherDetailBean"/> -->
+<!-- 		<dwr:convert converter="bean" match="com.siso.SafeLease.work.vouchersFillManage.service.impl.auxiliaryBean"/> -->
+	</dwr:configuration>
+</beans>

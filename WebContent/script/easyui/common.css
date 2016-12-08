@@ -1,0 +1,25 @@
+body{
+	margin:5px
+}
+label{
+	font-size: 14px;
+	display:inline-block;
+}
+.box{
+	padding:5px;
+	float:left;
+}
+.aBtn{
+	padding:5px;
+	float:right;
+	margin-right:15px;
+}
+.clear{
+	clear: both;
+	display:block;
+}
+input {
+	border:1px solid #95B8E7;
+	height:17px;
+	line-height:16px;
+}

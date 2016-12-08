@@ -1,0 +1,26 @@
+<script>
+function bnt1(){
+	//树结构
+	var dept = {
+			tableId:"T_BASE_DEPARTMENT",//查询的表id
+			key:"ORG_ID",//数据库字段
+			value:"ORG_NAME",//数据库字段
+			pid:"PARENT_ORG_ID"};//parentId
+	var returnValue = window.showModalDialog("../common/keyboard.jsp",dept,"scrollbars=no;resizable=no;help=no;status=no;center=yes;dialogWidth=380px;dialogHeight=550px");
+	alert(returnValue.id+":"+returnValue.text);
+	//window.showModalDialog("son.htm", "", 'scrollbars=no;resizable=no;help=no;status=no;center=yes;dialogHeight=693px;dialogWidth=900px');
+}
+function bnt2(){
+	//表格
+	var menu = {
+			tableId:"t_sys_menu",
+			key:"MENU_ID",
+			value:"MENU_NAME",
+			orderSql:"ORDER BY SORT ASC"//排序
+			};
+	var returnValue = window.showModalDialog("../common/keyboard.jsp",menu,"resizable:no;dialogWidth=380px;dialogHeight=550px");
+	alert(returnValue.id+":"+returnValue.text);
+}
+</script>
+<button onclick="bnt1()" >T_BASE_DEPARTMENT</button>
+<button onclick="bnt2()" >t_sys_menu</button>

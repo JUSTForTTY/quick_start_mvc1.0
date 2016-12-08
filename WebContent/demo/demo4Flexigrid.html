@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>sample</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/flexigrid.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript"
+	src="../script/jquery-1.8.3.js"></script>
+<script language="javascript" type="text/javascript"
+	src="../script/flexigrid.js"></script>
+<script src="../script/jquery.customplugin.js" language="javascript"
+	type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+	$(function() {
+		//var t = $('#tab');
+
+		//$.uiTableEdit(t);
+
+		/*$.flexAppendRow = function(obj, targetObj) {
+			//克隆模板列
+			var tr = obj.find("tr").clone();
+			$("<span>取消</span>").click(function() {
+				$(this).parent().parent().remove();
+			}).css("cursor", "pointer").appendTo($("td:last", tr));
+			//$("td:last",tr).append(span);
+			targetObj.find("tbody").append(tr);
+		};
+		 */
+		//表格控件
+		$('#tab').flexigrid({
+			height:100,
+			striped : false,
+			buttons : [ {
+				name : '保存',
+				bclass : 'btn'
+			} ],
+			usepager : true,
+			useRp : true,
+			rp : 15,
+			width : "640",
+			height : 200
+
+		});
+
+		var testData = [ {
+			id:123,
+			text : "as@163.com",
+			name : "http://sdas.dfasd.com",
+			type : "aaa33333",
+			remark : "aaa4"
+		}
+		/* , {
+			text : "bbb",
+			name : "bbb",
+			type : "bbb",
+			remark : "bbb"
+		}, {
+			text : "ccc",
+			name : "ccc",
+			type : "ccc",
+			remark : "ccc"
+		}, {
+			text : "ddd",
+			name : "ddd",
+			type : "ddd",
+			remark : "ddd"
+		}, {
+			text : "eee",
+			name : "eee",
+			type : "eee",
+			remark : "eee"
+		}, {
+			text : "fff",
+			name : "fff",
+			type : "fff",
+			remark : "fff"
+		}, {
+			text : "ggg",
+			name : "ggg",
+			type : "ggg",
+			remark : "ggg"
+		},  */
+		];
+
+		var tab = $("#tab").flexEditRow({			
+			addId : "add",
+			colName : "name",
+			initData : testData,//初始化数据
+			saved : function(a, b) {
+				a.find("[chkItem=1]").val("132");
+				return true;
+			}
+		});
+		//追加数据
+		tab.addData(testData);
+
+		$("#clear").click(function(){
+			tab.clearData();
+		});
+		
+		//按回车foucs后移
+		$("[div=div]").tabControl();
+		
+		
+		//暂时不使用的验证方式
+		// Get the form object.
+        var signUpForm = $("#signup-form");
+
+        // Invokes the validation method.        
+        signUpForm.validation();
+        
+        //目前使用的验证方式
+        $.tooltip({ onFormSubmit: false ,buttonObj:$("#submit"),
+		validated:function(status){
+			//alert(status);
+		} 
+		});		
+		
+		//表格控件
+		$('#tabAdd').flexigrid({
+			height:100,
+			striped : false,
+			buttons : [ {
+				name : '保存',
+				bclass : 'btn'
+			} ],
+			usepager : true,
+			useRp : true,
+			rp : 15,
+			width : "640",
+			height : 200
+
+		});
+		var tabc = $("#tabAdd tbody").tabControl({selector:"input:text"});
+		
+		//连续添加的表格控件
+		var flexAdd = $("#tabAdd").flexAdd({
+			addId:"adds",
+			deleteId:"deletes",
+			selector:"input:text",
+			chkAllId : "chkAll1",
+			added:function(tr){
+				tabc.resetTabControl();
+				$("input:text" + ":first",tr).focus();
+			}
+		});
+		flexAdd.addData(testData);
+		
+	});
+</script>
+</head>
+<body>
+	<!-- Start Sign Up Form -->
+		<form action="#signup-form" id="signup-form">
+	<!--<table tag="template">
+		<tr >
+			<td><input class="width1" /></td>
+			<td><input class="width1" /></td>
+			<td><input class="width1" /></td>
+			<td><input class="width1" /></td>
+			<td><input type="button" value="保存" /></td>
+		</tr>
+	</table>-->
+	<br />sample 1：table可编辑
+	<br />
+	<br />
+	<input type="button" value="添加" id=add />
+	<input type="button" value="删除" id=delete />
+	<input type="button" value="编辑" id=edit />
+	<input type="button" value="保存" id="submit" />
+	<input type="button" value="清除" id="clear" />
+
+	<table id="tab" style="border-collapse:collapse;"  >
+		<thead>
+			<tr>
+				<th><input type="checkbox" item name="id" id="chkAll" />
+				</th>
+				<th width="30" >序号</th>
+				<th width="100">mail</th>
+				<th width="100">URL地址</th>
+				<th width="100">密码</th>
+				<th width="100">委托客户</th>
+				<th width="100">编辑</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="hidden" t=template>
+				
+				<td><input type="checkbox" item name="id" chkItem="1"  />
+				</td>
+				<td><span itemNum ></span>
+				</td>
+				<td><input class="width1" item name="text" reg="email" tip="mail" />
+				</td>
+				<td><input class="width1" item name="name" reg="url" tip="URL地址"  />
+				</td>
+				<td><input class="width1" item name="type" reg="password" tip="密码" />
+				</td>
+				<td><input class="width1" item name="remark"  />
+				</td>
+				<td><input type="button" value="编辑" t=rowEdit class="hidden" />
+					<input type="button" value="保存" t=rowSave /> <input type="button"
+					value="取消" t=rowCancel />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+	<br />sample 2：按回车键光标在div内的容器循环获得焦点
+	<br />
+	<br />
+	<div>
+		<div div="div" id="div2" style="border:1px solid black">
+			用户：<input type="text" name="input1" /><br /> 密码：<input type="text"
+				name="input2" /><br /> 邮箱：<input type="text" name="input3" /><br />
+			用户：<input type="text" name="input1" /><br /> 密码：<input type="text"
+				name="input2" /><br /> 邮箱：<input type="text" name="input3" /><br />
+			<input type="button" name="input4" value="test" />
+		</div>
+		<div div="div" id="div1" style="border:1px solid black">
+			用户：<input type="text" name="input1" /><br /> 密码：<input type="text"
+				name="input2" /><br /> 邮箱：<input type="text" name="input3" /><br />
+			<input type="button" name="input4" value="test" />
+		</div>
+		<div div="div" id="div2" style="border:1px solid black">
+			用户：<input type="text" name="input1" /><br /> 密码：<input type="text"
+				name="input2" /><br /> 邮箱：<input type="text" name="input3" /><br />
+			<input type="text" name="input3" /><br /> <input type="text"
+				name="input3" /><br /> <input type="text" name="input3" /><br />
+			<input type="text" name="input3" /><br /> <input type="text"
+				name="input3" /><br /> <input type="text" name="input3" /><br />
+			<input type="text" name="input3" /><br /> <input type="button"
+				name="input4" value="test" />
+		</div>
+	</div>
+	<br />sample 3：表单验证
+	<br />
+	<br />
+	<div>
+		
+			<h2>Sign Up</h2>
+			<fieldset>
+				<div >
+					<label for="name"> Name</label> <input type="text" name="name"
+						validation="required" />
+				</div>
+				<div>
+					<label for="email"> Email</label> <input type="text" name="email"
+						validation="email" reg="email" tip="请输入一个正确的mail地址！" />
+				</div>
+				<div>
+					<label for="password"> Password</label> <input type="text"
+						name="password" validation="password" reg="password" tip="密码必须是8-20位的数字和字母！" />
+				</div>
+				<div>
+					<label for="weibo"> Weibo</label> <input type="text" name="weibo"
+						validation="url" reg="url" tip="URL地址" />
+				</div>
+
+				<div class="fieldgroup">
+					<input type="button" name="submit" value="Sign up" />
+				</div>
+			</fieldset>
+		
+	</div>
+	</div>
+	<br />sample 4：连续新增行事件
+	<br />
+	<br />
+	<div id="tableAdds" >
+	<input type="button" id="adds" value="添加" />
+	<input type="button" id="deletes" value="删除" />
+	<br/>selectDivIndex:<span id="selectDivIndex" ></span>
+	<br/>index:<span id="index" ></span>
+	<br/>len:<span id="len" ></span>
+	<table id="tabAdd" style="border-collapse:collapse;"  >
+		<thead>
+			<tr>
+				<th width="30"><input class="hidden" />&nbsp;
+				</th>
+				<th width="30" >序号</th>
+				<th width="100">mail</th>
+				<th width="100">URL地址</th>
+				<th width="100">密码</th>
+				<th width="100">委托客户</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="hidden" t=template>
+				
+				<td><input type="checkbox" item name="id" chkItem="1"  />
+				</td>
+				<td><span itemNum ></span>
+				</td>
+				<td><input class="width1" item name="text" reg="email" tip="邮箱地址" />
+				</td>
+				<td><input class="width1" item name="name" reg="url" tip="URL地址"  />
+				</td>
+				<td><input class="width1" item name="type" reg="password" tip="密码" />
+				</td>
+				<td><input class="width1" item name="remark"  />
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	</div>
+	</form>
+		<!-- End Sign Up Form -->
+</body>
+</html>

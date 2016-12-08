@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+<body>
+<p align=center style='text-align:center'><b>内河危险货物运输船舶进港通报单</b></p>
+
+<span style='font-size:12.0pt;font-family:宋体;'>
+	苏州市港口局：
+</span>
+<br><br><br>
+<span style='font-size:12.0pt;font-family:宋体;'>&nbsp;&nbsp;&nbsp;&nbsp;现有boatName船舶，由(startPort)（始发港）装载(kinds)（品种）(number)（数量）吨，(year)年(month)月(day)日(hour)时（预计进港时间）进入本辖区水域，并已办理相关进港申报手续，准备驶向(wharf)码头停靠、作业。
+</span>
+<span style='font-size:12.0pt;font-family:宋体;'>
+	特将上述事项（情况）通报。
+</span><br><br><br>
+<span style='font-size:12.0pt;font-family:宋体;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通报单位：苏州市城区地方海事处<
+/span><br><br>
+<span style='font-size:12.0pt;font-family:宋体;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通报日期：(informYear)年(informMonth)月(informDay)日</span>
+</body></html>
